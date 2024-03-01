@@ -23,16 +23,16 @@ public class Node{
     @Override
     public String toString() {
         String info ="";
-        info += "nome:\t" + nome + "\n";
-        info += "valore:\t" + valore + "\n";
-        info += "successivo:\t" + next + "\n";
+        info += "\t\tnome:\t" + nome + "\n";
+        info += "\tvalore:\t" + valore + "\n";
+        if(next != null) info += "\tsuccessivo:\n" + next;
+        else info += "\tlista terminata\n";
         return info;
     }
 
     public boolean equals(Node n){
         if(!this.nome.equals(n.nome)) return false;
-        if(this.valore != n.valore) return false;
-        return true;
+        return this.valore == n.valore;
     }
 
     private String getString() {

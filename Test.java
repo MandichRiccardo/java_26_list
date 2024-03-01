@@ -1,26 +1,25 @@
 public class Test{
     public static void main(String[] args) {
         esecuzione(new List());
+        System.out.println("programma terminato");
     }
 
     public static void esecuzione(List l){
+        System.out.println("stato attuale della lista:\n" + l);
         System.out.println("""
                 cosa vuoi fare?
                     0)\tterminare il programma
                     1)\taggiungere un nodo
                     2)\trimuovere un nodo""");
-        switch(getInt(0, 1)){
+        switch(getInt(0, 2)){
             default -> {
                 return;
             }
             case 1 -> l.addNode(new Node());
             case 2 -> l.removeNode(new Node());
         }
-        System.out.println("stato attuale della lista:\n" + l + "\n\n");
         esecuzione(l);
     }
-
-
 
     protected static int getInt() {
         try{

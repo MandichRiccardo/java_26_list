@@ -20,9 +20,13 @@ public class List {
 
 
     public void removeNode(Node n){
-        if (!start.equals(n)) removeNextNode(start, n);
-        else start = start.next;
-        size--;
+        try {
+            if (!start.equals(n)) removeNextNode(start, n);
+            else start = start.next;
+            size--;
+        }catch (NullPointerException e){
+            System.out.println("non ho potuto rimuovere questo nodo perché non lo ho trovato");
+        }
     }
 
     protected void removeNextNode(Node current, Node n){
@@ -33,7 +37,9 @@ public class List {
     public String toString(){
         String info = "";
         info += "size:\t" + size + "\n";
-        info += "start:\t" + start + "\n";
+        info += "\tlista iniziata\n";
+        if(start != null) info += "\tstart:\n" + start + "\n";
+        else info += "\tlista terminata\n";
         return info;
     }
 }
