@@ -55,11 +55,6 @@ public class List {
             System.out.println((i+1) + ")\tgiro:\n" + this);
             i++;
             orderNext(start);
-            try{
-                java.lang.Thread.sleep(100);
-            }catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
         }
     }
 
