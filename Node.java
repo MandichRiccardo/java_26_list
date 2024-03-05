@@ -44,6 +44,7 @@ public class Node{
     }
     private int getInt() {
         try{
+            System.out.println("devi inserire un numero intero");
             return new java.util.Scanner(System.in).nextInt();
         }catch (java.util.InputMismatchException e){
             return getInt();
