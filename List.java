@@ -21,8 +21,8 @@ public class List {
 
     public void removeNode(Node n){
         try {
-            if (!start.equals(n)) removeNextNode(start, n);
-            else start = start.next;
+            if (start.equals(n)) start = start.next;
+            else removeNextNode(start, n);
             size--;
         }catch (NullPointerException e){
             System.out.println("non ho potuto rimuovere questo nodo perché non lo ho trovato");
@@ -30,8 +30,8 @@ public class List {
     }
 
     protected void removeNextNode(Node current, Node n){
-        if(!current.next.equals(n)) removeNextNode(current.next, n);
-        else current.next = current.next.next;
+        if(current.next.equals(n)) current.next = current.next.next;
+        else removeNextNode(current.next, n);
     }
 
     public String toString(){
