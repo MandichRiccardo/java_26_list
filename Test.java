@@ -10,13 +10,15 @@ public class Test{
                 cosa vuoi fare?
                     0)\tterminare il programma
                     1)\taggiungere un nodo
-                    2)\trimuovere un nodo""");
-        switch(getInt(0, 2)){
+                    2)\trimuovere un nodo
+                    3)\tordina la lista""");
+        switch(getInt(0, 3)){
             default -> {
                 return;
             }
             case 1 -> l.addNode(new Node());
             case 2 -> l.removeNode(new Node());
+            case 3 -> l.order();
         }
         esecuzione(l);
     }
