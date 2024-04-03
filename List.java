@@ -7,6 +7,11 @@ public class List {
         start = null;
     }
 
+    public void addFirstNode(Node n){
+        n.next = this.start;
+        this.start = n;
+    }
+
     public void addNode(Node n){
         if (start != null) addNextNode(start, n);
         else start = n;
