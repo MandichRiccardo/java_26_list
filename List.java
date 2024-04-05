@@ -48,6 +48,10 @@ public class List {
         return info;
     }
 
+    public void printList(){
+        System.out.println(this);
+    }
+
     public void order(){
         int i=0;
         while (!ordered(start)) {

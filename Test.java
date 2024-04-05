@@ -5,7 +5,8 @@ public class Test{
     }
 
     public static void esecuzione(List l){
-        System.out.println("stato attuale della lista:\n" + l);
+        System.out.println("stato attuale della lista:");
+        l.printList();
         System.out.println("""
                 cosa vuoi fare?
                     0)\tterminare il programma
