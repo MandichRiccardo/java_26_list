@@ -69,4 +69,13 @@ public class Lettore_csv {
             System.out.println(i + ")\t" + tabel[i]);
         }
     }
+
+    public void removeRow(int index){
+        String[] newTabel = new String[this.tabel.length-1];
+        for(int i=0, j=0;i<tabel.length;i++, j++){
+            if(j==index) j++;
+            newTabel[i] = tabel[j];
+        }
+        tabel = newTabel;
+    }
 }

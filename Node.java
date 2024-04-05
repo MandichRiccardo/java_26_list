@@ -49,14 +49,14 @@ public class Node{
         return this.valore == n.valore;
     }
 
-    private String getString() {
+    public static String getString() {
         try{
             return new java.util.Scanner(System.in).nextLine();
         }catch (java.util.InputMismatchException e){
             return getString();
         }
     }
-    private int getInt() {
+    public static int getInt() {
         try{
             return new java.util.Scanner(System.in).nextInt();
         }catch (java.util.InputMismatchException e){
