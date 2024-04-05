@@ -8,6 +8,12 @@ public class Node{
         this.valore = valore;
         next = null;
     }
+    public Node(String row) {
+        String[] node = row.split(",");
+        nome = node[0];
+        valore = Integer.parseInt(node[1]);
+        next = null;
+    }
     public Node() {
         System.out.println("inserisci il nome di questo nodo");
         this.nome = getString();
@@ -28,6 +34,14 @@ public class Node{
         if(next != null) info += "\tsuccessivo:\n" + next;
         else info += "\tlista terminata\n";
         return info;
+    }
+
+    public String toFile(){
+        String info = "";
+        info += nome + ",";
+        info += valore + "\n";
+        if(next == null) return info;
+        else return info + next.toFile();
     }
 
     public boolean equals(Node n){

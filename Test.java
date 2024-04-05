@@ -1,10 +1,21 @@
 public class Test{
     public static void main(String[] args) {
-        esecuzione(new List());
+        List l;
+        if(getBoolean()) {
+            Lettore_csv reader = new Lettore_csv();
+            reader.getFile(getNomeFile());
+            l = new List(reader.tabel);
+        }else{
+            l = new List();
+        }
+        esecuzione(l);
+        l.printList();
+        System.out.println();
+        System.out.println(l.toFile());
         System.out.println("programma terminato");
     }
 
-    public static void esecuzione(List l){
+    public static List esecuzione(List l){
         System.out.println("stato attuale della lista:");
         l.printList();
         System.out.println("""
@@ -15,13 +26,13 @@ public class Test{
                     3)\tordina la lista""");
         switch(getInt(0, 3)){
             default -> {
-                return;
+                return l;
             }
             case 1 -> l.addNode(new Node());
             case 2 -> l.removeNode(new Node());
             case 3 -> l.order();
         }
-        esecuzione(l);
+        return esecuzione(l);
     }
 
     protected static int getInt() {
@@ -45,5 +56,13 @@ public class Test{
         if (ret <= max) return ret;
         System.out.println("devi inserire un numero minore o uguale a " + max);
         return getInt(min, max);
+    }
+    public static boolean getBoolean(){
+        try{
+            return new java.util.Scanner(System.in).nextBoolean();
+        }catch (java.util.InputMismatchException e){
+            System.out.println("devi inserire un booleano nel formato \"true\" o \"false\"");
+            return getBoolean();
+        }
     }
 }

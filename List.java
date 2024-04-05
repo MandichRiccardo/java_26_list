@@ -6,6 +6,11 @@ public class List {
         size = 0;
         start = null;
     }
+    public List(String[] list){
+        for(String node:list){
+            addNode(new Node(node));
+        }
+    }
 
     public void addFirstNode(Node n){
         n.next = this.start;
@@ -50,6 +55,10 @@ public class List {
 
     public void printList(){
         System.out.println(this);
+    }
+
+    public String toFile(){
+        return start.toFile();
     }
 
     public void order(){
