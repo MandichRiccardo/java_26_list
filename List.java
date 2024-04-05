@@ -57,7 +57,6 @@ public class List {
                 start.next = this.start.next;
                 this.start.next = start;
             }
-            System.out.println((i+1) + ")\tgiro:\n" + this);
             i++;
             orderNext(start);
         }

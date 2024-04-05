@@ -24,7 +24,7 @@ public class Node{
     public String toString() {
         String info ="";
         info += "\t\tnome:\t" + nome + "\n";
-        info += "\tvalore:\t" + valore + "\n";
+        info += "\t\tvalore:\t" + valore + "\n";
         if(next != null) info += "\tsuccessivo:\n" + next;
         else info += "\tlista terminata\n";
         return info;
@@ -44,9 +44,9 @@ public class Node{
     }
     private int getInt() {
         try{
-            System.out.println("devi inserire un numero intero");
             return new java.util.Scanner(System.in).nextInt();
         }catch (java.util.InputMismatchException e){
+            System.out.println("devi inserire un numero intero");
             return getInt();
         }
     }
