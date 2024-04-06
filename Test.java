@@ -73,7 +73,7 @@ public class Test{
     public static void readFile(Lettore_csv reader){
         System.out.println("inserisci il nome del file di input");
         try{
-            reader.getFile(Node.getString());
+            reader.getFile("csv\\" + Node.getString());
         }catch(java.io.FileNotFoundException e){
             System.out.println("questo file non esiste, controlla che sia presente nella cartella e di aver inserito correttamente il suo nome e il suo percorso partendo dalla cartella madre del progetto");
             readFile(reader);
